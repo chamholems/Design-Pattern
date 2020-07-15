@@ -7,7 +7,10 @@ package main.java.singleton;
  */
 public class Singleton5 {
 
-    private static Singleton5 INSTANCE;
+    /**
+     * 不加volatile会出现JIT指令重排的问题 （不是很懂）
+     */
+    private static volatile Singleton5 INSTANCE;
 
     private Singleton5(){}
 
